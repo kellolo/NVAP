@@ -5,4 +5,5 @@ v 2.0
 Add localization. Add illegal drift explanation
 
 v 2.1
-Fixed output localization
+- Fixed output localization
+- Fixed Hyp fail drifts, added w49, w50

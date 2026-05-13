@@ -634,6 +634,8 @@ Added route-specific codes:
 - `W44_NEMESIS_REFUSAL_MISREAD`: refusal of revenge is treated as arc failure rather than valid Nemesis -> Hypomone return.
 - `W45_MANIAC_RETURN_UNSUPPORTED`: Maniac is returned to Hypomone without loss of obsessive authority and restored ambivalence.
 - `W46_ILLEGAL_DRIFT_UNDISCLOSED`: analysis names drift toward a non-direct or forbidden destination but does not state the illegal direct route and legal delivery routes.
+- `W47_OUTPUT_LOCALIZATION_LEAK`: visible output leaks internal English headings, labels, verdict values, route terms, floor codes or hybrid pseudo-translations instead of using the operator language.
+- `W48_CANONICAL_TERM_ASR_DRIFT`: analysis accepts a speech-recognition error, misspelling or hybrid pseudo-term as a real NVAP type or system term instead of normalizing it to the closest canonical kernel term when context supports normalization.
 
 ## Severity
 
@@ -661,52 +663,198 @@ When designing an arc:
 12. Check moral contour.
 13. Reject spectacle that bypasses route legality.
 
+## Canonical Term Normalization / ASR Guard
+
+Operators may use audio input, dictation, fast typing or mixed-language notation. The model must not treat transcription noise as new NVAP terminology.
+
+Canonical NVAP type proper names are:
+
+```text
+Hypomone
+Chaos
+Swarm
+Telos
+Nemesis
+Maniac
+Crisis
+Catastrophe
+Absolute
+```
+
+These names are closed type names. If the operator input contains a likely misspelling, speech-recognition artifact or hybrid form, normalize it to the closest canonical type when the surrounding context clearly points to one.
+
+Examples of normalization:
+
+```text
+Stellos -> Telos
+Hipomons / Hypomons -> Hypomone
+Nemesida / Nemeside -> Nemesis, if the NVAP type is intended
+```
+
+Do not create new type names, route names or table labels from ASR artifacts. If the intended term is unclear, preserve the operator phrase as uncertain and ask for clarification only when the ambiguity changes the analysis result.
+
+Canonical internal system terms must also be recognized through likely transcription drift. For example, if context clearly concerns floors, routes, threshold, price, consolidation, confidence or drift, map noisy input back to the corresponding canonical kernel concept rather than inventing a new field.
+
+This guard does not override user-created names, character names, faction names or quoted in-world terminology. Apply it only when the phrase is being used as NVAP system terminology.
+
+## Visible Output Localization Protocol
+
+The kernel may keep canonical internal tokens in English. The operator-facing answer must not expose those tokens as ordinary interface headings, table fields, route labels or verdict values.
+
+Visible output must be written in the operator language by default. The operator language is the language used by the operator to communicate with the assistant in the current task, unless the operator explicitly requests another output language or compact canonical notation.
+
+This applies to every visible layer:
+
+- section headings;
+- table column names;
+- row values where the value is a diagnostic label rather than a proper name;
+- route explanations and route verdicts;
+- floor labels;
+- weakness explanations;
+- construction requirements;
+- final summary.
+
+### Proper Type Names vs Translatable Technical Terms
+
+NVAP type names are proper technical names, not ordinary words to translate semantically:
+
+```text
+Hypomone
+Chaos
+Swarm
+Telos
+Nemesis
+Maniac
+Crisis
+Catastrophe
+Absolute
+```
+
+They may be kept as canonical Latin tokens or transliterated into the operator's script when the operator language normally uses that script and the form is unambiguous. They must not be semantically translated or replaced with a different cultural/mythological name.
+
+Invalid handling of proper type names:
+
+```text
+Hypomone -> patience / endurance / suffering
+Telos -> goal / purpose
+Nemesis -> revenge / goddess name substitution
+Maniac -> villain label
+```
+
+Ordinary NVAP technical terms are interface/system terms and must be translated into the operator language in visible output:
+
+```text
+floor
+route / road
+scope
+genre regime / horizon
+core subject
+main route risk
+threshold
+price
+consolidation
+confidence
+external goal
+axis-goal
+valid
+edge valid
+illegal route
+substitution
+false escalation
+underpay
+poison fuel
+stabilizer / anti-stabilizer
+right to action
+```
+
+Do not embed full multilingual dictionaries or large language-specific term maps inside the kernel. Localization is an output-layer responsibility. The kernel defines the requirement, not a universal glossary.
+
+### Floor Codes
+
+Internal floor codes are canonical internal notation, not output-language terms. Do not write `F1`, `F2`, `F3` in visible output by default. Use localized floor labels in the operator language. Canonical floor codes may appear only if the operator asks for compact canonical notation or if a first-use parenthetical is useful:
+
+```text
+[localized first-floor label] (`F1`)
+[localized second-floor label] (`F2`)
+[localized third-floor label] (`F3`)
+```
+
+### Leakage Rule
+
+Invalid visible output in any non-English operator language includes:
+
+```text
+floor/type
+Legal road
+Threshold
+Price
+Consolidation
+Scope
+Genre/Horizon
+Core subject
+Main route risk
+Valid as external goal
+Edge Valid
+F1 Hypomone
+raw English table headers
+hybrid pseudo-translations
+ASR-distorted type names treated as real types
+```
+
+Valid visible output uses the operator language for headings, table headers, diagnostic labels and explanations, while keeping NVAP type proper names canonical or transliterated according to the operator's established lexicon.
+
+If a model cannot confidently localize a technical term, it must either use the operator's already established term or give the canonical token in backticks with a short explanation in the operator language. It must not leave raw English table scaffolding in the answer.
+
+Any visible answer that leaks internal English headings, column names, verdict values, route labels, floor codes or ASR-distorted pseudo-terms triggers `W47_OUTPUT_LOCALIZATION_LEAK` and may also trigger `W48_CANONICAL_TERM_ASR_DRIFT`.
+
 ## Output Contract for Plot Creation
 
-Use compact Russian unless the task demands another language.
+Use the operator language unless the task demands another language or the operator requests compact canonical notation.
 
-Return:
+Return localized surface terms in the operator language. Keep NVAP type names as proper technical names: canonical Latin form or unambiguous transliteration into the operator's script. Do not semantically translate type names.
+
+Return this structure with all bracketed interface labels localized for the operator:
 
 ```md
-## NVAP-PLOT Verdict
+## [localized NVAP plot verdict heading]
 
-SCOPE:
-GENRE/HORIZON:
-CORE SUBJECTS:
-MORAL_CONTOUR:
-MAIN ROUTE RISK:
+[localized scope label]:
+[localized genre/horizon label]:
+[localized key subjects label]:
+[localized moral contour label]:
+[localized main route risk label]:
 
-## Vector Map
+## [localized vector map heading]
 
-| subject | declared/perceived/true vector | floor/type | axis/engine | fuel/poison | stabilizer/anti-stabilizer | confidence |
+| [localized subject] | [localized declared/perceived/true vector] | [localized floor/type] | [localized axis/engine] | [localized fuel/poison] | [localized stabilizer/anti-stabilizer] | [localized confidence] |
 
-## Route Map
+## [localized route map heading]
 
-| subject | current type | proposed move | legal route? | required threshold | price | consolidation |
+| [localized subject] | [localized current type] | [localized proposed movement] | [localized route legality] | [localized required threshold] | [localized price] | [localized consolidation] |
 
-## Drift Route Check
+## [localized drift route check heading]
 
-| subject | observed drift | illegal direct route | legal delivery routes | required intermediate type | threshold/price/consolidation needed |
+| [localized subject] | [localized observed drift] | [localized forbidden direct route] | [localized legal delivery routes] | [localized required intermediate type] | [localized required threshold/price/consolidation] |
 
-## Goal Audit
+## [localized goal check heading]
 
-| subject | external goals | axis-goal | Hypomone/Telos verdict | evidence needed |
+| [localized subject] | [localized external goals] | [localized axis-goal] | [localized Hypomone/Telos verdict] | [localized required evidence] |
 
-## F3 Ownership Check
+## [localized F3 ownership check heading]
 
-| claimed F3 | legal source | field/order/principle | route | price | after-state | verdict |
+| [localized declared F3 form] | [localized legal source] | [localized field/order/principle] | [localized route] | [localized price] | [localized after-state] | [localized verdict] |
 
-## Weakspots
+## [localized weakspots heading]
 
-| severity | code | where | diagnosis | vector damage | missing condition |
+| [localized severity] | [localized code] | [localized location] | [localized diagnosis] | [localized vector damage] | [localized missing condition] |
 
-## Construction Requirements
+## [localized construction requirements heading]
 
-- REQ1:
-- REQ2:
-- REQ3:
+- [localized requirement marker] 1:
+- [localized requirement marker] 2:
+- [localized requirement marker] 3:
 
-## Do Not Fix By
+## [localized do-not-fix-by heading]
 
 - ...
 ```

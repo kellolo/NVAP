@@ -1,4 +1,4 @@
-# NVAP-PLOT Runtime Kernel v2
+# NVAP-PLOT Runtime Kernel v2.1
 
 Адаптированный сюжетно-конструкторский kernel для `Конвейер Чистовик`.
 
@@ -226,6 +226,7 @@ Common movement labels:
 These routes are invalid unless handled through reset, intermediate legal type, or revelation/extraction of a different true vector:
 
 ```text
+Hypomone -> Maniac
 Hypomone -> Crisis
 Hypomone -> Catastrophe
 Hypomone -> Absolute
@@ -241,6 +242,26 @@ Catastrophe -> Crisis
 Crisis -> Absolute
 Catastrophe -> Absolute
 ```
+
+Special note:
+
+```text
+Hypomone -> Maniac
+```
+
+is invalid as a direct route and must not be diagnosed as direct movement. It is valid only as:
+
+```text
+Hypomone -> Chaos -> Maniac
+```
+
+where Hypomone first breaks into function/effect through loss of living carrying and moral ambivalence, and only then the function becomes self-authorizing obsessive axis; or as:
+
+```text
+Hypomone -> Telos/Nemesis -> Maniac
+```
+
+where a full F2 type is first legally established through threshold, price and consolidation, and only afterward breaks into Maniac. In this case the diagnosed break belongs to Telos or Nemesis, not to direct Hypomone movement.
 
 Special note:
 
@@ -312,8 +333,9 @@ Nemesis is becoming Crisis.
 Valid phrasing:
 
 ```text
-Hypomone shows drift toward Maniac, but direct Hypomone -> Maniac is not legal.
-Possible legal routes: Hypomone -> Telos -> Maniac; Hypomone -> Nemesis -> Maniac; Hypomone -> Chaos -> Maniac.
+Hypomone shows Maniac-like route risk, but direct Hypomone -> Maniac is not legal.
+Possible legal delivery routes: Hypomone -> Chaos -> Maniac; or Hypomone -> Telos/Nemesis -> Maniac only after a full F2 state is legally established and then breaks.
+If no threshold, price and consolidation exist, diagnose stress_amplitude or poison_fuel rather than transition.
 ```
 
 ```text
@@ -336,6 +358,66 @@ For every detected illegal drift, the output must answer:
 6. Which price and consolidation would prove the route.
 
 If no legal delivery route is available without changing true vector, reset, or extraction, mark the issue as `illegal_route`, `substitution`, or `false_escalation` rather than inventing a shortcut.
+
+## Stress Amplitude Guard
+
+Stress intensity is not a transition trigger.
+
+Battle, argument, fear, pain, emergency, chase, fire, exhaustion, physical limit, protection of a close bond, adrenalized action, temporary rage, panic or a burst of violence must not be treated as automatic vector drift, transition, break or floor escalation.
+
+A subject may temporarily exceed ordinary behavior and remain in the current type when the episode preserves:
+
+- the same engine;
+- the same right to action;
+- the same moral ambivalence, if it belongs to the current type;
+- the same stabilizers;
+- no new threshold-owned state;
+- no route price;
+- no consolidation of a new behavior grammar.
+
+Such an episode is diagnosed as `stress_amplitude`, not as route movement.
+
+Stress amplitude may become evidence for future drift only when it repeats as a pattern, alters the right to action, weakens or replaces stabilizers, produces price, and consolidates into a new state.
+
+Invalid diagnostic triggers:
+
+- strong action equals higher floor;
+- battle rage equals Maniac drift;
+- protecting a friend equals Nemesis;
+- carrying a large world goal equals Telos;
+- physical extremity equals Chaos;
+- spectacle equals right to action.
+
+Before naming drift, the model must answer:
+
+1. Is this only amplitude under pressure, or does it create a new right to action?
+2. Does the episode serve the current engine, or replace it?
+3. Is there a threshold beyond the immediate stress event?
+4. Is there a price that remains after the scene?
+5. Is there consolidation after the pressure ends?
+6. Would the subject continue to act by the new grammar outside the stress condition?
+
+If the answer to 3-6 is no, default diagnosis is `stress_amplitude`, not drift.
+
+## Hypomone-to-Maniac Guard
+
+Hypomone must not be diagnosed as moving to Maniac directly.
+
+Single episodes of rage, combat frenzy, violent self-defense, protection of a close bond, adrenalized action, harsh speech, temporary loss of control or morally ugly action under pressure do not create Hypomone -> Maniac movement.
+
+Legal delivery from Hypomone to Maniac exists only through one of two route families:
+
+1. `Hypomone -> Chaos -> Maniac`
+
+The Hypomone first breaks as a living carrier. Moral ambivalence collapses, carrying becomes repeatable function/effect, and the subject begins to act as pressure, mechanism or reaction. Only after this Chaos state is established can the function be absolutized into self-authorizing obsessive axis.
+
+2. `Hypomone -> Telos/Nemesis -> Maniac`
+
+The Hypomone first becomes a legal F2 subject. The axis-goal or retributive address must be established through threshold, price and consolidation. Only then can that F2 axis break, fuse with pain, ego, control, spectacle or non-completing obsession, and become Maniac.
+
+In the second family, the diagnosed break is not Hypomone -> Maniac. It is Telos -> Maniac or Nemesis -> Maniac after a proven F2 state.
+
+If analysis sees Maniac-like pressure around Hypomone but cannot establish Chaos or a prior F2 state, it must mark `stress_amplitude`, `poison_fuel`, `route_risk`, `illegal_route` or `W50_HYPOMONE_MANIAC_SHORTCUT`, not a valid transition.
 
 ## Hypomone Goal Protocol
 
@@ -636,6 +718,8 @@ Added route-specific codes:
 - `W46_ILLEGAL_DRIFT_UNDISCLOSED`: analysis names drift toward a non-direct or forbidden destination but does not state the illegal direct route and legal delivery routes.
 - `W47_OUTPUT_LOCALIZATION_LEAK`: visible output leaks internal English headings, labels, verdict values, route terms, floor codes or hybrid pseudo-translations instead of using the operator language.
 - `W48_CANONICAL_TERM_ASR_DRIFT`: analysis accepts a speech-recognition error, misspelling or hybrid pseudo-term as a real NVAP type or system term instead of normalizing it to the closest canonical kernel term when context supports normalization.
+- `W49_STRESS_AMPLITUDE_MISREAD`: stress, battle, adrenaline, rage, fear, harsh speech, protection of a bond or temporary over-limit action is misread as vector drift, transition, break or floor escalation without new right to action, threshold, price and consolidation.
+- `W50_HYPOMONE_MANIAC_SHORTCUT`: Hypomone is diagnosed as moving to Maniac directly, without proven Chaos route, without a prior legal F2 state and without the break belonging to that intermediate type.
 
 ## Severity
 
@@ -874,4 +958,6 @@ Return this structure with all bracketed interface labels localized for the oper
 - returning Absolute to ordinary life without de-absolutization;
 - making Swarm into a higher-floor subject without condensation;
 - adding spectacle instead of threshold, route, price and after-state;
+- reading stress amplitude, battle rage, adrenaline or harsh conflict as drift without new right to action, threshold, price and consolidation;
+- diagnosing Hypomone -> Maniac directly instead of requiring Chaos or a proven F2 break;
 - flattening genre: comedy, survival, romance, serial, mythic and dark epic horizons carry different price regimes.

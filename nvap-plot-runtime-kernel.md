@@ -188,38 +188,38 @@ Common movement labels:
 
 ### F1 Routes
 
-| from | to | legal condition |
-|---|---|---|
-| `Hypomone` | `Telos` | external or latent goal becomes internal axis-goal and governs decisive choices |
-| `Hypomone` | `Nemesis` | subject accepts violated measure, address and answer as axis |
-| `Hypomone` | `Chaos` | moral ambivalence collapses; subject becomes function/effect rather than living carrier |
-| `Swarm` | `Telos` | collective condenses into a vector subject with shared axis-goal |
-| `Swarm` | `Nemesis` | collective condenses around violated measure, address and answer |
-| `Swarm` | `Maniac` | collective function or wound becomes self-authorizing obsessive axis |
-| `Chaos` | `Maniac` | function is absolutized into obsessive axis |
+| from       | to        | legal condition                                                                         |
+| ---------- | --------- | --------------------------------------------------------------------------------------- |
+| `Hypomone` | `Telos`   | external or latent goal becomes internal axis-goal and governs decisive choices         |
+| `Hypomone` | `Nemesis` | subject accepts violated measure, address and answer as axis                            |
+| `Hypomone` | `Chaos`   | moral ambivalence collapses; subject becomes function/effect rather than living carrier |
+| `Swarm`    | `Telos`   | collective condenses into a vector subject with shared axis-goal                        |
+| `Swarm`    | `Nemesis` | collective condenses around violated measure, address and answer                        |
+| `Swarm`    | `Maniac`  | collective function or wound becomes self-authorizing obsessive axis                    |
+| `Chaos`    | `Maniac`  | function is absolutized into obsessive axis                                             |
 
 ### F2 Routes
 
-| from | to | legal condition |
-|---|---|---|
-| `Telos` | `Crisis` | goal escalates into rupture of old order/world for future after-state |
-| `Telos` | `Hypomone` | mission is completed, refused, exhausted, released, or subject returns to life |
-| `Telos` | `Maniac` | goal fuses with mania, ego, pain, control, spectacle or non-completing axis |
-| `Nemesis` | `Catastrophe` | retribution escalates from address to reproduction-field annulment: «больше никогда» |
-| `Nemesis` | `Hypomone` | subject refuses/finishes/sets down retribution and accepts life or another measure format |
-| `Nemesis` | `Maniac` | retribution fuses with mania; address spreads without field logic; answer becomes obsessive |
-| `Maniac` | `Absolute` | mania totalizes into principle and demands world-coincidence |
-| `Maniac` | `Hypomone` | mania is exhausted, recognized, rejected, disenchanted or loses authority; moral ambivalence returns |
-| `Maniac` | `Chaos` | obsessive axis collapses; only function/effect remains |
+| from      | to            | legal condition                                                                                      |
+| --------- | ------------- | ---------------------------------------------------------------------------------------------------- |
+| `Telos`   | `Crisis`      | goal escalates into rupture of old order/world for future after-state                                |
+| `Telos`   | `Hypomone`    | mission is completed, refused, exhausted, released, or subject returns to life                       |
+| `Telos`   | `Maniac`      | goal fuses with mania, ego, pain, control, spectacle or non-completing axis                          |
+| `Nemesis` | `Catastrophe` | retribution escalates from address to reproduction-field annulment: «больше никогда»                 |
+| `Nemesis` | `Hypomone`    | subject refuses/finishes/sets down retribution and accepts life or another measure format            |
+| `Nemesis` | `Maniac`      | retribution fuses with mania; address spreads without field logic; answer becomes obsessive          |
+| `Maniac`  | `Absolute`    | mania totalizes into principle and demands world-coincidence                                         |
+| `Maniac`  | `Hypomone`    | mania is exhausted, recognized, rejected, disenchanted or loses authority; moral ambivalence returns |
+| `Maniac`  | `Chaos`       | obsessive axis collapses; only function/effect remains                                               |
 
 ### F3 Routes and Returns
 
-| from | to | legal condition |
-|---|---|---|
-| `Crisis` | `Hypomone` | rupture is executed, after-state exists, subject survives, world continues |
-| `Catastrophe` | `Hypomone` | reproduction field is annulled, after-state exists, subject survives, world continues |
-| `Absolute` | `Absolute` | principle remains totalized; subject is principle, vessel or non-human form |
-| `Absolute` | `?` | no default return; possible only through de-absolutization, separation from principle, restoration of moral ambivalence and paid aftermath |
+| from          | to         | legal condition                                                                                                                            |
+| ------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `Crisis`      | `Hypomone` | rupture is executed, after-state exists, subject survives, world continues                                                                 |
+| `Catastrophe` | `Hypomone` | reproduction field is annulled, after-state exists, subject survives, world continues                                                      |
+| `Absolute`    | `Absolute` | principle remains totalized; subject is principle, vessel or non-human form                                                                |
+| `Absolute`    | `?`        | no default return; possible only through de-absolutization, separation from principle, restoration of moral ambivalence and paid aftermath |
 
 ## Forbidden Direct Routes
 
@@ -608,6 +608,7 @@ Return:
 
 ```md
 ## NVAP-PLOT Verdict
+
 SCOPE:
 GENRE/HORIZON:
 CORE SUBJECTS:
@@ -615,26 +616,33 @@ MORAL_CONTOUR:
 MAIN ROUTE RISK:
 
 ## Vector Map
+
 | subject | declared/perceived/true vector | floor/type | axis/engine | fuel/poison | stabilizer/anti-stabilizer | confidence |
 
 ## Route Map
+
 | subject | current type | proposed move | legal route? | required threshold | price | consolidation |
 
 ## Goal Audit
+
 | subject | external goals | axis-goal | Hypomone/Telos verdict | evidence needed |
 
 ## F3 Ownership Check
+
 | claimed F3 | legal source | field/order/principle | route | price | after-state | verdict |
 
 ## Weakspots
+
 | severity | code | where | diagnosis | vector damage | missing condition |
 
 ## Construction Requirements
+
 - REQ1:
 - REQ2:
 - REQ3:
 
 ## Do Not Fix By
+
 - ...
 ```
 

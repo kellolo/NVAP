@@ -278,6 +278,65 @@ or as:
 declared/perceived Nemesis -> revelation/extraction -> true Telos -> Crisis
 ```
 
+## Illegal Drift Disclosure Protocol
+
+Drift toward an illegal or non-direct route may be diagnosed, but it must not be phrased as a permitted transition.
+
+If analysis detects pressure, poison fuel, anti-stabilizer, spectacle, declared intention or reader expectation pulling a subject toward a type or action that the current type cannot reach directly, output must explicitly separate:
+
+```text
+current true type
+observed drift / route risk
+illegal direct route, if any
+legal delivery routes from the matrix
+required intermediate state, threshold, price and consolidation
+```
+
+Drift language is allowed only as risk language:
+
+```text
+F1 Hypomone with Maniac-drift poison fuel.
+Telos with Catastrophe-drift rhetoric.
+Nemesis with Crisis-drift future language.
+Chaos with Absolute-drift principle pressure.
+```
+
+Invalid phrasing:
+
+```text
+Hypomone is moving to Maniac.
+Telos is becoming Catastrophe.
+Nemesis is becoming Crisis.
+```
+
+Valid phrasing:
+
+```text
+Hypomone shows drift toward Maniac, but direct Hypomone -> Maniac is not legal.
+Possible legal routes: Hypomone -> Telos -> Maniac; Hypomone -> Nemesis -> Maniac; Hypomone -> Chaos -> Maniac.
+```
+
+```text
+Telos shows drift toward Catastrophe, but direct Telos -> Catastrophe is not legal.
+Possible legal routes: Telos -> reset/refusal/completion -> Hypomone -> Nemesis -> Catastrophe; or declared/perceived Telos -> revelation/extraction -> true Nemesis -> Catastrophe.
+```
+
+```text
+Nemesis shows drift toward Crisis, but direct Nemesis -> Crisis is not legal.
+Possible legal routes: Nemesis -> reset/refusal/completion -> Hypomone -> Telos -> Crisis; or declared/perceived Nemesis -> revelation/extraction -> true Telos -> Crisis.
+```
+
+For every detected illegal drift, the output must answer:
+
+1. What exactly is drifting: fuel, rhetoric, action pattern, reader perception, declared goal, spectacle, or anti-stabilizer?
+2. Why the direct route is illegal under the matrix.
+3. Which legal route can deliver the subject there.
+4. What intermediate type must be established.
+5. Which threshold would make the intermediate type real.
+6. Which price and consolidation would prove the route.
+
+If no legal delivery route is available without changing true vector, reset, or extraction, mark the issue as `illegal_route`, `substitution`, or `false_escalation` rather than inventing a shortcut.
+
 ## Hypomone Goal Protocol
 
 Hypomone can walk toward a large goal without becoming Telos.
@@ -574,6 +633,7 @@ Added route-specific codes:
 - `W43_FUNCTION_AMBIVALENCE_CONFUSION`: Chaos function is mistaken for moral ambivalence or living Hypomone.
 - `W44_NEMESIS_REFUSAL_MISREAD`: refusal of revenge is treated as arc failure rather than valid Nemesis -> Hypomone return.
 - `W45_MANIAC_RETURN_UNSUPPORTED`: Maniac is returned to Hypomone without loss of obsessive authority and restored ambivalence.
+- `W46_ILLEGAL_DRIFT_UNDISCLOSED`: analysis names drift toward a non-direct or forbidden destination but does not state the illegal direct route and legal delivery routes.
 
 ## Severity
 
@@ -594,11 +654,12 @@ When designing an arc:
 5. Define axis/engine/fuel/stabilizer/anti-stabilizer.
 6. Identify whether goals are external goals or axis-goals.
 7. Select legal route from the matrix.
-8. Define threshold, mechanism, price and consolidation for each movement.
-9. For F3, define old order / reproduction field / principle.
-10. Decide whether post-F3 life returns to Hypomone or ends/locks the subject.
-11. Check moral contour.
-12. Reject spectacle that bypasses route legality.
+8. If drift points toward a non-direct or forbidden destination, disclose the illegal direct route and list legal delivery routes.
+9. Define threshold, mechanism, price and consolidation for each movement.
+10. For F3, define old order / reproduction field / principle.
+11. Decide whether post-F3 life returns to Hypomone or ends/locks the subject.
+12. Check moral contour.
+13. Reject spectacle that bypasses route legality.
 
 ## Output Contract for Plot Creation
 
@@ -622,6 +683,10 @@ MAIN ROUTE RISK:
 ## Route Map
 
 | subject | current type | proposed move | legal route? | required threshold | price | consolidation |
+
+## Drift Route Check
+
+| subject | observed drift | illegal direct route | legal delivery routes | required intermediate type | threshold/price/consolidation needed |
 
 ## Goal Audit
 

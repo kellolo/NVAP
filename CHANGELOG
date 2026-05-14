@@ -7,3 +7,6 @@ Add localization. Add illegal drift explanation
 v 2.1
 - Fixed output localization
 - Fixed Hyp fail drifts, added w49, w50
+
+v 3.0
+- Add Billiard
